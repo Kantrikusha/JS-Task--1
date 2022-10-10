@@ -27,14 +27,13 @@ console.log(sentence);
 */
 
 let studentsArr = ['John', 'Will', 'Andrew', 'Joseph', 'Lorelai', 'Amelie', 'Den'];
-let lastEl = studentsArr.length - 1;
-let middleEl = lastEl/2;
-i = middleEl;
-console.log(studentsArr[i]);
+let middleEl = (studentsArr.length - 1)/2;
+console.log(studentsArr[middleEl]);
 
 /*
     Task 3 : 
     Part 1 : შექმენით სტუდენტის ობიექტი , რომელსაც აქვს 5 property : firstName; lastName; age; subjects; roommate;
+
     firstname,lastname - string type
     age - number
     subject - object (array of strings)
@@ -52,8 +51,30 @@ console.log(studentsArr[i]);
         დაამატეთ ცვლადი result რომლის მნიშვნელობაც იქნება წინადადება : 
             ' (სტუდენტის სახელი და გვარი) არის age წლის და მისი რუმმეითი არის : roommate fullname
         
-
 */
+
+// Part 1
+let student = {
+    firstName: "ნინო",
+    lastName: "ნინიძე",
+    age: 22,
+    subjects:["Math", "History", "Geography", "JavaScript", "Angular"],
+    roommate:{
+        fullName: "ლიკა" + " " + "ღლონტი",
+        age: 30
+    }
+}
+
+let subjectsArr = student.subjects;
+for (let i=0; i<subjectsArr.length; i++) {
+    console.log(subjectsArr[i]);
+}
+
+student.fullName = student.firstName + " " + student.lastName;
+// console.log(student);
+
+let resultSent = `${student.fullName} არის ${student.age} წლის და მისი რუმმეითი არის ${student.roommate.fullName}.` ;
+console.log(resultSent);
 
 /*
     Task 4 : 
@@ -62,6 +83,8 @@ console.log(studentsArr[i]);
         დალოგეთ ეს ელემენტი.
 
 */
+
+let FruitArr = ["Banana", "Orange", "Apple", "Mango", 2, 12];
 
 /*
     Task 5 : 
