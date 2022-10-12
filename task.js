@@ -84,7 +84,17 @@ console.log(resultSent);
 
 */
 
-let FruitArr = ["Banana", "Orange", "Apple", "Mango", 2, 12];
+let fruitArr = ["Banana", "Orange", "Apple", "Mango", 2, 12];
+for(let i=0; i<fruitArr.length; i++){
+    let typ = typeof fruitArr[i];
+
+    if(typ == 'string'){
+        console.log(fruitArr[i]);
+    }
+}
+
+// for-ით გავაკეთე,  while-ით ვერა ((. 
+
 
 /*
     Task 5 : 
@@ -93,6 +103,17 @@ let FruitArr = ["Banana", "Orange", "Apple", "Mango", 2, 12];
     თუ მასივის ელემენტი ნაკლებია 31ზე და თან არის კენტი მაშინ დალოგეთ : 'Element is less than provided value and is ODD'
 
 */
+
+let numsArr = [12, 23, 43, 11, 9, 2, 121, 90];
+if(numsArr[i]>31 && numsArr[i]%2==0) {
+    console.log('Element is greater than provided value and is EVEN');
+}
+
+// ეს არ გამომივიდა
+
+
+
+
 
 //part 2
 
@@ -109,6 +130,7 @@ let FruitArr = ["Banana", "Orange", "Apple", "Mango", 2, 12];
     თუ არ არის ჭეშმარიტი გამოიტანეთ წინადადება "provided array isn't itarable"
 
 */
+
 
 //Task 2
 /*
