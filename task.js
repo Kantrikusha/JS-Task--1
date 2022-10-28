@@ -26,9 +26,38 @@ console.log(sentence);
 
 */
 
+let studArr = ['John', 'Will', 'Andrew', 'Joseph', 'Lorelai', 'Amelie', 'Den'];
+let middleEl = (studArr.length - 1)/2;
+console.log(studArr[middleEl]);
+
+// ფუნქცია კენტი რაოდენობისთვის:
 let studentsArr = ['John', 'Will', 'Andrew', 'Joseph', 'Lorelai', 'Amelie', 'Den'];
-let middleEl = (studentsArr.length - 1)/2;
-console.log(studentsArr[middleEl]);
+
+function midFromOdd(arr){
+    return arr[(arr.length - 1)/2];
+}
+let midEl = midFromOdd(studentsArr);
+console.log(midEl);
+
+// ფუნქცია ლუწი რაოდენობის ელემენტებიდან მარცხნივ მდგომისთვის:
+let ordNum = ['first', 'second', 'third', 'leftmiddle', 'rightmiddle', 'sixth', 'seventh', 'eighth'];
+
+function leftMidFromEven(arr){
+    return arr[arr.length / 2 - 1];
+}
+let midLeft = leftMidFromEven(ordNum);
+console.log(midLeft);
+
+// ფუნქცია ლუფი რაოდენობის ელემენტებიდან მარჯვნივ მდგომისთვის:
+let ordNum2 = ['first', 'second', 'third', 'leftmiddle', 'rightmiddle', 'sixth', 'seventh', 'eighth'];
+
+function rightMidFromEven2(arr){
+    return arr[arr.length / 2];
+}
+let midRight = rightMidFromEven2(ordNum2);
+console.log(midRight);
+// ან გამოვიძახებთ ასე
+console.log(rightMidFromEven2([1, 2, 3, 4, 5, 6, 7, 8]));
 
 /*
     Task 3 : 
@@ -71,10 +100,29 @@ for (let i=0; i<subjectsArr.length; i++) {
 }
 
 student.fullName = student.firstName + " " + student.lastName;
-// console.log(student);
+console.log(student);
 
 let resultSent = `${student.fullName} არის ${student.age} წლის და მისი რუმმეითი არის ${student.roommate.fullName}.` ;
 console.log(resultSent);
+
+// მეორენაირად
+let student = {
+    firstName: "ნინო",
+    lastName: "ნინიძე",
+    age: 22,
+    subjects:["Math", "History", "Geography", "JavaScript", "Angular"],
+    roommate:{
+        fullName: "ლიკა" + " " + "ღლონტი",
+        age: 30
+    }
+}
+for (let i=0; i<student.subjects.length; i++) {
+    console.log(student.subjects[i]);
+}
+
+let fullNameSt = student.firstName + " " + student.lastName;
+student.fullName = fullNameSt;
+console.log(student);
 
 /*
     Task 4 : 
@@ -92,9 +140,13 @@ for(let i=0; i<fruitArr.length; i++){
         console.log(fruitArr[i]);
     }
 }
-
-// for-ით გავაკეთე,  while-ით ვერა ((. 
-
+// პირველად for-ით გავაკეთე,  while-ით ვერა და ვიდეოს ნახვის მერე დავწერე. 
+let fruitArr2 = ["Banana", "Orange", "Apple", "Mango", 2, 12];
+let i=0;
+while(typeof fruitArr2[i] == 'string'){
+    console.log(fruitArr2[i]);
+    i++;
+}
 
 /*
     Task 5 : 
@@ -105,14 +157,27 @@ for(let i=0; i<fruitArr.length; i++){
 */
 
 let numsArr = [12, 23, 43, 11, 9, 2, 121, 90];
-if(numsArr[i]>31 && numsArr[i]%2==0) {
-    console.log('Element is greater than provided value and is EVEN');
+
+for (i=0; i<numsArr.length; i++){
+if(numsArr[i]>31 && numsArr[i]%2 === 0) {
+    console.log(numsArr[i] + '---Element is greater than provided value and is EVEN');
 }
+if(numsArr[i]<31 && numsArr[i]%2) {
+    console.log(numsArr[i] + '---Element is less than provided value and is ODD')
+}
+}
+// მეორენაირად:
+let numsArr2 = [12, 23, 43, 11, 9, 2, 121, 90];
 
-// ეს არ გამომივიდა
-
-
-
+for (i=0; i<numsArr2.length; i++){
+    let el = numsArr2[i];
+if(el>31 && el%2 === 0) {
+    console.log(el + '---Element is greater than provided value and is EVEN');
+}
+else if(el<31 && el%2) {
+    console.log(el + '---Element is less than provided value and is ODD')
+}
+}
 
 
 //part 2
@@ -130,6 +195,20 @@ if(numsArr[i]>31 && numsArr[i]%2==0) {
     თუ არ არის ჭეშმარიტი გამოიტანეთ წინადადება "provided array isn't itarable"
 
 */
+let sampleObject = {
+    isIterable : false,
+    sampleArray : [12,63,21,34,98,57],
+};
+function checkAndIterate (obj){
+    if (obj.isIterable) {
+    for (let el of obj.sampleArray) {
+        console.log(el);
+    }
+    } else {
+        console.log("provided array isn't Iterable");
+    }
+}
+checkAndIterate(sampleObject);
 
 
 //Task 2
@@ -141,6 +220,18 @@ if(numsArr[i]>31 && numsArr[i]%2==0) {
     წინააღმდეგ შემთხვევაში false
     
 */
+function checkPythagorasCalc (x,y,z) {
+  return x*x + y*y == z*z;
+}
+const checkPythagoras = function (a,b,c){
+    return (
+    checkPythagorasCalc (a,b,c)||
+    checkPythagorasCalc (a,c,b)||
+    checkPythagorasCalc (b,c,a)
+    )
+}
+
+
 
 //Task 3
 /*
@@ -149,6 +240,23 @@ if(numsArr[i]>31 && numsArr[i]%2==0) {
     მაგ : [2,14,25,75,11,6] თუ კი ამ მასივს გადავცემთ არგუმენტის სახით ფუნქციამ უნდა
     დააბრუნოს "Min value is 2 and Max value is 75"
 */
+let minMaxArr = [2,14,25,75,11,6,111,-1];
+
+function minMax (arr) {
+    let max = arr[0];
+    let min = arr[0];
+    for(let i=0; i<arr.length; i++){
+        if (arr[i] > max){
+            max = arr[i];
+        }
+        if (arr[i]<min) {
+            min = arr[i];
+        }
+    } 
+    return `"Min value is ${min} and Max value is ${max}`;
+}
+let minMaxEl = minMax(minMaxArr);
+console.log(minMaxEl);
 
 //Task 4
 
@@ -163,11 +271,36 @@ Straight angle: A 180 degree angle.
 
 */
 
-// function checkDeg (deg) {
+function checkDeg (deg) {
+  if (deg>0 && deg<90){
+    return `Acute angle: An angle between 0 and 90 degrees.`
+  } else if (deg===90){
+    return `Right angle: An 90 degree angle.`
+  } else if (deg>90 && deg<180){
+    return `Obtuse angle: An angle between 90 and 180 degrees.`
+  } else if (deg===180){
+    return  `Straight angle: A 180 degree angle.`
+  } else return `can't identify`
+}
 
-// }
+console.log(checkDeg(400));
 
-// checkDeg(92)
+// იგივე ფუნქცია swich case-ით:
+function checkDeg (deg){
+switch (true) {
+    case deg > 0 && deg < 90:
+        return `Acute angle: An angle between 0 and 90 degrees.`;
+    case deg === 90:
+        return `Right angle: An 90 degree angle.`;
+    case deg > 90 && deg < 180:
+        return  `Obtuse angle: An angle between 90 and 180 degrees.`
+    case deg ===180:
+        return   `Straight angle: A 180 degree angle.`
+    default:  
+     return `this value cannot be the value of deg`       
+}
+}
+console.log(checkDeg(400));
 
 //Task 5
 /*
@@ -188,3 +321,28 @@ Straight angle: A 180 degree angle.
 
 
 */
+let studentsObjArr = [{name: "student1",  grade : 91}, {name: "student2", grade : 71}, {name: "student3", grade : 45}, {name: "student4", grade: 60}, {name: "student5", grade: 55}];
+
+function checkStudentGrade (arr) {
+    for (let i=0; i<arr.length; i++){
+        if(arr[i].grade > 0 && arr[i].grade <= 50) {
+            arr[i].finalResult = 'E'
+        }
+        if(arr[i].grade >= 51 && arr[i].grade <= 60) {
+            arr[i].finalResult = 'D'
+        }
+        if(arr[i].grade >= 61 && arr[i].grade <= 70) {
+            arr[i].finalResult = 'C'
+        }
+        if(arr[i].grade >= 71 && arr[i].grade <= 80) {
+            arr[i].finalResult = 'B'
+        }
+        if(arr[i].grade >= 81 && arr[i].grade <= 100) {
+            arr[i].finalResult = 'A'
+        } 
+        console.log(arr)
+}
+}
+checkStudentGrade(studentsObjArr);
+
+// ამაზე ბევრი ვიწვალე, თავიდან იმის გამო, რომ პატარა ორთოგრაფიული შეცდომა მქონია დაშვებული, ამის გამო ვერ ვიგებდი კოდს სწორად ვაგებდი თუ არა. შეცდომა რომ გავასწორე მერე რამდენიმე მცდელობაში გამომივიდა.
